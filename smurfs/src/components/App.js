@@ -34,11 +34,23 @@ function App() {
           console.log("the data was not posted", error);
         });
     }
-	
+  
+  
+    const removeSmurf = id => {
+      axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then(response => {
+        console.log(response);
+        setSmurfs(smurfs.filter(item => item.id != id));
+      })
+      .catch(error => {
+        console.log("the data was not deleted", error);
+      });
+    }
 	
 	return (
 		<div className="App">
-			<SmurfContext.Provider value={{ smurfs}}>
+			<SmurfContext.Provider value={{ smurfs, removeSmurf}}>
 	     <Smurfs/>
        <SmurfCard addSmurf={addSmurf}/>
 	

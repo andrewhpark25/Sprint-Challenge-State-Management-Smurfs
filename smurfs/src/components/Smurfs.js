@@ -5,13 +5,15 @@ import Smurf from './Smurf';
 
 
 const Smurfs = () => {
-	const { smurfs} = useContext(SmurfContext);
+	const { smurfs, removeSmurf} = useContext(SmurfContext);
 	return (
 		<div className="smurfs-container">
 			{smurfs.map(smurf => (
 				<Smurf
 					key={smurf.id}
-                    smurf={smurf}
+					smurf={smurf}
+					{...smurf}
+					removeSmurf={removeSmurf}
 				/>
 			))}
 		</div>

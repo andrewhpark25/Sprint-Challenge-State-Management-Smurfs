@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Smurf = props => {
 	return (
 		<div className="smurf">
@@ -10,7 +11,7 @@ const Smurf = props => {
 
             <p className="height">Height : {props.smurf.height}</p>
 
-          
+			<button onClick={() => props.removeSmurf(props.id)}>Remove from cart</button>
 
 		
 		</div>

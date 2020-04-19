@@ -25,6 +25,8 @@ export default function SmurfCard (props) {
     });
   }
 
+
+
     return (
         <form>
             Name:
